@@ -38,5 +38,14 @@ Content-Type: application/json
     "category_id": 2
 }
 
+
 ### Successfully delete joke with id 1
 DELETE http://localhost:3000/api/jokes/1
+
+### Unsuccessful delete joke id:, ie. id: 1000
+DELETE http://localhost:3000/api/jokes/1000
+
+
+### Random Joke
+# GET http://localhost:3000/api/jokes/random
+GET http://localhost:3000/api/jokes/random?category=great
