@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_secure_password # to deal with that password digest
+    has_secure_password # to deal with that password digest when creating g model user - password_digest
 
     # add some validations such as username and email
     validates :username, presence: true, uniqueness: true

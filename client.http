@@ -49,3 +49,20 @@ DELETE http://localhost:3000/api/jokes/1000
 ### Random Joke
 # GET http://localhost:3000/api/jokes/random
 GET http://localhost:3000/api/jokes/random?category=great
+
+
+### Create user
+POST http://localhost:3000/api/auth/sign_up
+Content-Type: application/json 
+# we write content type when we want to test with a sample json data below
+
+
+{
+    "username": "Tim2",
+    "email": "tim2@test.com",
+    "password": "password2",
+    "password_confirmation": "password2"
+}
+
+
+
