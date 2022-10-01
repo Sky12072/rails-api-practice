@@ -6,6 +6,7 @@ GET http://localhost:3000/api/jokes
 
 POST http://localhost:3000/api/jokes
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjQ3MDYyMzIsInN1YiI6M30.mZHnZT5tPY7O75GKsqq20402IM9zZcFwQ75ozOy2hzQ
 
 {
     "category_id": 1,
@@ -32,6 +33,7 @@ GET http://localhost:3000/api/jokes/1000
 ### Successfully update joke 1
 PUT http://localhost:3000/api/jokes/1
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjQ3MDY5NDgsInN1YiI6MX0.ecB7D6HniOaN3aM7gKa9QU6N3Dqww4rmuaQL1N-IcO4
 
 {
     "body": "A Programming Joke",
@@ -46,6 +48,11 @@ DELETE http://localhost:3000/api/jokes/1
 DELETE http://localhost:3000/api/jokes/1000
 
 
+### Destroy joke I have permission for
+DELETE http://localhost:3000/api/jokes/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjQ3MDY5NDgsInN1YiI6MX0.ecB7D6HniOaN3aM7gKa9QU6N3Dqww4rmuaQL1N-IcO4
+
+
 ### Random Joke
 # GET http://localhost:3000/api/jokes/random
 GET http://localhost:3000/api/jokes/random?category=great
@@ -58,11 +65,36 @@ Content-Type: application/json
 
 
 {
-    "username": "Tim2",
-    "email": "tim2@test.com",
+    "username": "Tim3",
+    "email": "tim3@test.com",
     "password": "password2",
     "password_confirmation": "password2"
 }
+
+
+### Sign in with correct details
+POST http://localhost:3000/api/auth/sign_in
+Content-Type: application/json 
+# we write content type when we want to test with a sample json data below
+
+
+{
+    "email": "tim@test.com",
+    "password": "password1"
+}
+
+
+### Sign in with Incorrect details
+POST http://localhost:3000/api/auth/sign_in
+Content-Type: application/json 
+# we write content type when we want to test with a sample json data below
+
+
+{
+    "email": "tim3@test.com",
+    "password": "password"
+}
+
 
 
 
